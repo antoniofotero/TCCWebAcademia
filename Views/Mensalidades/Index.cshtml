@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebAcademia.Classes.Mensalidade>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AlunoMensalidade.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MesReferencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataVencimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataPagamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PagamentoConcluido)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlunoMensalidade.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MesReferencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataVencimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataPagamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PagamentoConcluido)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CodigoMensalidade }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CodigoMensalidade }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CodigoMensalidade })
+        </td>
+    </tr>
+}
+
+</table>
